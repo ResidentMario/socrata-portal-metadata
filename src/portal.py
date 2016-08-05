@@ -1,5 +1,28 @@
 """
 Implements the socrata-reducer Client class and the Pythonic dataset lister.
+
+The raw JSON endpoint, accessed by appending "data.json" to the end of a portal's base URI (for example,
+New York City's is at http://nycopendata.socrata.com/data.json) provides metadata about every dataset (according to
+one definition of the term, there are several but this is the one we stick with here) on a Socrata portal. In the
+case of the New York City open data portal, for example, this endpoint returns 1500 entities---the number that we
+keep on the page as an introductory banner.
+
+Not everything on an open data portal is a dataset. Charts, for example, aren't in anyone's definition of one,
+but they nevertheless take up a URI on the portal and have a unique hash that you can link to and find them
+with---in technical terms they are an "endpoint".
+
+The Socrata Catalog API (http://labs.socrata.com/docs/search.html), by contrast, provides metadata about
+individual *endpoints*. It provides more and better information, with one critical shortcoming: all maps on the
+portal are returned as "maps", whether or not they are derived from a separate dataset (in which case they are
+clearly not classifiable as datasets proper) or are simply visual wrappers of an underlying geospatial file (in which
+case they clearly are).
+
+The raw JSON endpoint *does* make this distinction, so to get a proper count we query both endpoints, scrape the data
+off of them, and then match raw JSON datasets with Catalog API datasets, and throw out what's left out.
+
+This is e.g. how the count returned by `get_dataset_counts.py` is implemented. Note that since these two data sources
+are very slightly out of date with one another (for reasons indeterminate) there is also an artifical "new" column for
+datasets which are missing when the two endpoint sets are matched.
 """
 import requests
 import pandas as pd

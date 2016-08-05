@@ -1,0 +1,9 @@
+name: socrata-portal-metadata
+dependencies:
+  - python
+  - pandas
+  - jupyter
+  - matplotlib
+  - requests
+  - pip:
+    - tqdm
