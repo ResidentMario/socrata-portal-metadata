@@ -26,9 +26,17 @@ least, one definition thereof) on the open data portal.
 * `src/get_dataset_counts.py` &mdash; Runnable Python scripts with generates counts of entities classifiable as
 "datasets" by endpoint types.
 
-## Further reading
+## Reading
 
 Read `notebooks/Socrata Portal Dataset Counting.ipynb` to get an understanding of why counting so-called datasets on
-a Socrata portal is a non-trivial task (blog post forthcoming). You can then read the comments in the `src/portal.py`
-source code to get a technical understanding of what the two endpoints used in this project (the Catalog API and
-the JSON endpoint) are, and why both are necessary.
+a Socrata portal is a non-trivial task. You can then read the comments in the `src/portal.py` source code to get a
+technical understanding of what the two endpoints used in this project (the Catalog API and the JSON endpoint) are,
+and why both are necessary.
+
+Once you've done so, if you want to go further you can run the scripts and get hacking!
+
+## Further reading
+
+Thomas Levine did a [longitudinal study of Socrata portal instances](https://thomaslevine.com/!/socrata-summary/)
+well worth reading if you're into this sort of thing (there is also a post on Socrata's blog about the [aftermath](https://socrata.com/blog/my-visit-to-socrata-and-data-analysis-about-data-analysis/)
+of that effort).
