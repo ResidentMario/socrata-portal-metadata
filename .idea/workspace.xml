@@ -2,32 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5c8d06-7837-484e-bbf3-535b6a6bd5aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/get_dataset_counts.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/load_catalog.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/load_datasets.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Socrata Portal Analysis.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dump.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dump_data.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Investigating the JSON-to-Catalog API Match-checkpoint.ipynb" afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Investigating the JSON-to-Catalog API Match-checkpoint.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Socrata Portal Analysis, First Pass-checkpoint.ipynb" afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Socrata Portal Analysis, First Pass-checkpoint.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Socrata Portal Analysis-checkpoint.ipynb" afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Socrata Portal Analysis-checkpoint.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Investigating the JSON-to-Catalog API Match.ipynb" afterPath="$PROJECT_DIR$/notebooks/Investigating the JSON-to-Catalog API Match.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Open Data - ACRIS Filter Endpoint Example.png" afterPath="$PROJECT_DIR$/figures/NYC Open Data - ACRIS Filter Endpoint Example.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Open Data - Data Map Highlight.png" afterPath="$PROJECT_DIR$/figures/NYC Open Data - Data Map Highlight.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Open Data - Derived Map Highlight.png" afterPath="$PROJECT_DIR$/figures/NYC Open Data - Derived Map Highlight.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Open Data - External Dataset Endpoint Example.png" afterPath="$PROJECT_DIR$/figures/NYC Open Data - External Dataset Endpoint Example.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Open Data - File Endpoint Type Example.png" afterPath="$PROJECT_DIR$/figures/NYC Open Data - File Endpoint Type Example.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Open Data - Site Analytics Dataset Count.png" afterPath="$PROJECT_DIR$/figures/NYC Open Data - Site Analytics Dataset Count.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYC Pothole Complaints Heatmap.png" afterPath="$PROJECT_DIR$/figures/NYC Pothole Complaints Heatmap.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYPD Motor Vehicle Collision Dataset - Banner.png" afterPath="$PROJECT_DIR$/figures/NYPD Motor Vehicle Collision Dataset - Banner.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYPD Motor Vehicle Collision Dataset - Socrata View.png" afterPath="$PROJECT_DIR$/figures/NYPD Motor Vehicle Collision Dataset - Socrata View.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/NYPD Motor Vehicle Collision Dataset - Table Tooltip Hover.png" afterPath="$PROJECT_DIR$/figures/NYPD Motor Vehicle Collision Dataset - Table Tooltip Hover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Socrata Portal Analysis, First Pass.ipynb" afterPath="$PROJECT_DIR$/notebooks/NYC Open Data Analysis.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Socrata Portal Analysis.ipynb" afterPath="$PROJECT_DIR$/notebooks/Socrata Portal Dataset Counting Scoping.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Socrata Totals Discrepency Comment.png" afterPath="$PROJECT_DIR$/figures/Socrata Totals Discrepency Comment.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nyc_comments.csv" afterPath="$PROJECT_DIR$/data/nyc_comments.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portal.py" afterPath="$PROJECT_DIR$/src/portal.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portal_contents_raw.json" afterPath="$PROJECT_DIR$/data/portal_contents_raw.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="socrata-reducer.iws" />
@@ -66,15 +40,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="527">
-                <caret line="31" column="97" selection-start-line="31" selection-start-column="97" selection-end-line="31" selection-end-column="97" />
+              <first_editor relative-caret-position="391">
+                <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,6 +128,7 @@
         <option value="$PROJECT_DIR$/src/test.py" />
         <option value="$PROJECT_DIR$/src/portal.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -745,11 +730,19 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="527">
-            <caret line="31" column="97" selection-start-line="31" selection-start-column="97" selection-end-line="31" selection-end-column="97" />
+          <first_editor relative-caret-position="391">
+            <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
