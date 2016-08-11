@@ -33,6 +33,8 @@ def get_endpoints_using_raw_json_emission(domain):
     Implements a raw HTTP GET against the entire Socrata portal for the domain in question. This method uses the
     first of the two ways of getting this information, the raw JSON endpoint.
 
+    For a scripted way of accessing this method refer to `load_datasets_using_json_endpoint.py`.
+
     Parameters
     ----------
     domain: str
@@ -52,6 +54,8 @@ def get_endpoints_using_catalog_api(domain, token):
     """
     Implements a raw HTTP GET against the entire Socrata portal for the domain in question. This method uses the
     second of the two ways of getting this information, the catalog API.
+
+    For a scripted way of accessing this method refer to `load_catalog.py`.
 
     Parameters
     ----------
@@ -81,6 +85,42 @@ def get_endpoints_using_catalog_api(domain, token):
         else:
             offset += 100
     return ret
+
+
+def get_datasets(domain, token):
+    """
+    The catalog API and JSON endpoint both return useful information, but the information that they return is useful
+    in slightly different ways. The JSON endpoint provides less information about the dataset in question,
+    including lacking a field for what *type* of dataset the entity in question is, but has the advantage of
+    returning only datasets (endpoints of other things, like charts and filters, are excluded). The catalog API
+    provides more information, and does so for all endpoints, but provides no way of filtering that set down to
+    datasets only because of issues with its categorization of "map" entities.
+
+    For a scripted way of accessing this method refer to `load_dataset.py`.
+
+    Parameters
+    ----------
+    catalog_emission: list
+        The list of catalog endpoints produced by the catalog API.
+    json_emission: list
+        The list of dataset endpoints produced by the JSON page.
+
+    Returns
+    -------
+    The matched datsets, e.g. a list of all datasets on the domain (according to our definition of "dataset")
+    obtained from the JSON endpoint, with the metadata provided on them by the catalog endpoint.
+    """
+    json_endpoints = get_endpoints_using_raw_json_emission(domain)
+    catalog_api_output = get_endpoints_using_catalog_api(domain, token)
+    catalog_endpoints = [d['permalink'].split("/")[-1] for d in catalog_api_output]
+    datasets = []
+    for i, endpoint in enumerate(json_endpoints):
+        try:
+            catalog_ind = catalog_endpoints.index(json_endpoints[i])
+        except ValueError:
+            pass
+        else:
+            datasets.append(catalog_api_output[catalog_ind])
 
 
 def list_endpoints(domain, token):

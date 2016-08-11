@@ -1,5 +1,6 @@
 """
-Small command-line script which uses the catalog API to query for every endpoint in the chosen domain.
+Small command-line script which uses the catalog API to query for every endpoint in the chosen domain. Saves the raw
+output to disc locally.
 """
 
 import json
