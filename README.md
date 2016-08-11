@@ -6,6 +6,8 @@ This repository contains the files, notebooks, scripts, and data output related 
 Open Data Portal](https://nycopendata.socrata.com/). The techniques and scripts here are extensible to *any*
 Socrata open data portal.
 
+For further reference, [read the accompanying blog post](http://residentmar.io/2016/08/11/nyc-open-data-portal.html).
+
 ### Contents
 
 #### Notebooks
