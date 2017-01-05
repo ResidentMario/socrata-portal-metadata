@@ -5,7 +5,7 @@ output to disc locally.
 
 import json
 
-from src.portal import get_endpoints_using_catalog_api
+from portal import get_endpoints_using_catalog_api
 
 domain = input("Your Socrata domain URI: ")
 key = input("Your Socrata application token: ")

@@ -113,14 +113,17 @@ def get_datasets(domain, token):
     json_endpoints = get_endpoints_using_raw_json_emission(domain)
     catalog_api_output = get_endpoints_using_catalog_api(domain, token)
     catalog_endpoints = [d['permalink'].split("/")[-1] for d in catalog_api_output]
+    json_endpoints = [d['landingPage'].split("/")[-1] for d in json_endpoints['dataset']]
     datasets = []
+    import pdb; pdb.set_trace()
     for i, endpoint in enumerate(json_endpoints):
         try:
             catalog_ind = catalog_endpoints.index(json_endpoints[i])
-        except ValueError:
+        except ValueError:  # The catalog does not contain this dataset. Skip it.
             pass
         else:
             datasets.append(catalog_api_output[catalog_ind])
+    return datasets
 
 
 def list_endpoints(domain, token):

@@ -1,3 +1,5 @@
 notebooks/.ipynb_checkpoints
 .idea/workspace.xml
 .idea
+src/.DS_Store
+src/__pycache__/

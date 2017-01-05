@@ -6,8 +6,7 @@ In general this script provides a subset of the data provided by `load_datasets.
 """
 
 import json
-
-from src.portal import get_endpoints_using_raw_json_emission
+from portal import get_endpoints_using_raw_json_emission
 
 domain = input("Your Socrata domain URI: ")
 filename = input("The filename you want to save this output to: ")
