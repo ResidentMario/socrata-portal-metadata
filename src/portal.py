@@ -27,7 +27,6 @@ datasets which are missing when the two endpoint sets are matched.
 import requests
 import pandas as pd
 
-
 def get_endpoints_using_raw_json_emission(domain):
     """
     Implements a raw HTTP GET against the entire Socrata portal for the domain in question. This method uses the
@@ -76,14 +75,26 @@ def get_endpoints_using_catalog_api(domain, token):
     ret = []
     offset = 0
     while True:
-        r = requests.get(uri.format(domain, offset), headers=headers)
-        r.raise_for_status()
+        try:
+            r = requests.get(uri.format(domain, offset), headers=headers)
+            r.raise_for_status()
+        except requests.HTTPError:
+            print("WARNING: HTTPError was raised.")
+            break
         data = r.json()
         ret += data['results']
         if len(data['results']) != 100:
             break
         else:
             offset += 100
+    # Clean up duplicates---the API now wraps around, so the first bunch of entries get returned again.
+    hashes = set()
+    for i, resource in enumerate(ret):
+        hash = resource['link']
+        length = len(hashes)
+        hashes.add(hash)
+        if len(hashes) == length:
+            del ret[i]
     return ret
 
 
@@ -115,7 +126,6 @@ def get_datasets(domain, token):
     catalog_endpoints = [d['permalink'].split("/")[-1] for d in catalog_api_output]
     json_endpoints = [d['landingPage'].split("/")[-1] for d in json_endpoints['dataset']]
     datasets = []
-    import pdb; pdb.set_trace()
     for i, endpoint in enumerate(json_endpoints):
         try:
             catalog_ind = catalog_endpoints.index(json_endpoints[i])
