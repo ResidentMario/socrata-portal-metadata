@@ -4,3 +4,4 @@ notebooks/Implementation Test.ipynb
 .idea
 src/.DS_Store
 src/__pycache__/
+data/
